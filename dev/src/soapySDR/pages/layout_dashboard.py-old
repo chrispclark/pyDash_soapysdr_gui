@@ -1,0 +1,114 @@
+import os
+import sys
+import pathlib
+
+import dash
+import dash_bootstrap_components as dbc
+from dash import html
+from waitress import serve
+
+from pages.callbacks import get_callbacks
+
+# from index import app
+from pages.layout_dbc import (
+    layitout_arp,
+    layitout_arp_leds,
+    layitout_arp_status,
+    layitout_host_leds,
+    layitout_host_status,
+    layitout_hosts,
+    layitout_logs,
+    layitout_quit,
+    layitout_test,
+    layitout_py_version,
+    layitout_arp_table_resolve_ip,
+)
+
+# from flask_loguru import logger
+from logit import logger
+
+
+if 'dev' in (pathlib.Path().absolute().as_posix()):
+    logger.info('dev system')
+    title = 'Network Monitor Dev'
+elif 'live' in (pathlib.Path().absolute().as_posix()):
+    logger.info('live system')
+    title = 'Network Monitor Live'
+else:
+    logger.error('Not live or dev system')
+    title = 'Network Monitor Not live or dev'
+
+external_script = [
+    'https://tailwindcss.com/',
+    {'src': 'https://cdn.tailwindcss.com'},
+]
+"""
+external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
+app = dash.Dash(
+    external_stylesheets=[dbc.themes.FLATLY],
+)
+"""
+dash.register_page(__name__, path='/')
+
+logger.info('layout_dashboard')
+"""
+# app.title = title
+# z = get_callbacks(app)
+logger.info("Application Started")
+
+os.environ["DBUS_SESSION_BUS_ADDRESS"] = "unix:path=/run/user/1000/bus"
+os.environ["DISPLAY"] = ":0"
+"""
+
+layout = html.Div(
+    children=[
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    layitout_py_version,
+                    width={'size': 1, 'offset': 0, 'order': '1'},
+                ),
+                dbc.Col(
+                    layitout_test,
+                    width={'size': 1, 'offset': 0, 'order': '1'},
+                ),
+                dbc.Col(
+                    layitout_host_status,
+                    width={'size': 3, 'offset': 0, 'order': '1'},
+                ),
+                dbc.Col(
+                    layitout_arp_status,
+                    width={'size': 3, 'offset': 0, 'order': '1'},
+                ),
+                # dbc.Col(layitout_sync, style={"width": "30%"}),
+                dbc.Col(
+                    layitout_host_leds,
+                    width={'size': 2, 'offset': 0, 'order': '1'},
+                ),
+                dbc.Col(
+                    layitout_arp_leds,
+                    width={'size': 2, 'offset': 0, 'order': '1'},
+                ),
+            ],
+        ),
+        # className="g-0",
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(layitout_hosts, style={'width': '100%'}),
+                dbc.Col(layitout_arp, style={'width': '100%'}),
+            ],
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                # dbc.Col(layitout_logs, style={"width": "100%"}),
+                # dbc.Col(layitout_tooltip, style={"width": "30%"}),
+                dbc.Col(layitout_quit, style={'width': '20%'}),
+                dbc.Col(layitout_arp_table_resolve_ip, style={'width': '20%'}),
+            ],
+        ),
+        dash.page_container,
+    ],
+)

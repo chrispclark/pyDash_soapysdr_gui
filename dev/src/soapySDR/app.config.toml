@@ -1,0 +1,278 @@
+[Abbeymede]
+host = "https://abbeymeaddental.co.uk/"
+mask = "/32"
+check = "433"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Amazon FireStick - tcp/8009"]
+host = "amazon-firestick.chrissy.org"
+mask = "/32"
+check = "8009"
+type = "socket"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Amazon FireStick - tcp/33750"]
+host = "amazon-firestick.chrissy.org."
+mask = "/32"
+check = "33750"
+type = "socket"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Amazon FireStick - tcp/37921"]
+host = "amazon-firestick.chrissy.org."
+mask = "/32"
+check = "37921"
+type = "socket"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Apple"]
+host = "https://www.apple.com/uk/"
+mask = "/32"
+check = "433"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Bombay Naka"]
+host = "https://bombaynaka.co.uk/"
+mask = "/32"
+check = "433"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["local net 192.168.1.0/24"]
+host = "192.168.1.0/24"
+mask = "/24"
+check = "arp"
+type = "discovery"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["conservatory media - ssh"]
+host = "conservatory-media.chrissy.org"
+mask = "/32"
+check = "22"
+type = "socket"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["conservatory media - named"]
+host = "conservatory-media.chrissy.org."
+mask = "/32"
+check = "53"
+type = "dns"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["conservatory media - tcp/12345"]
+host = "conservatory-media.chrissy.org."
+mask = "/32"
+check = "12345"
+type = "socket"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["conservatory main - named"]
+host = "conservatory-media.chrissy.org."
+mask = "/32"
+check = "22"
+type = "dns"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Dave"]
+host = "https://www.dgsdesignandbuild.co.uk/"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["endevouros"]
+host = "https://endeavouros.com/"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["google-home"]
+host = "google-home.chrissy.org"
+mask = "/32"
+check = "10001"
+type = "socket"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Garuda Linux"]
+host = "https://garudalinux.org/"
+mask = "/32"
+check = "433"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["British Airways"]
+host = "https://ba.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Mrs Balbir Sing"]
+host = "https://mrsbalbirsingh.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Opensource"]
+host = "https://opensource.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["hivehome.com"]
+host = "https://my.hivehome.com/"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Manjaro"]
+host = "https://manjaro.org/"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Quora"]
+host = "https://www.quora.com"
+mask = "/32"
+check = "433"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Smile Amazon UK"]
+host = "https://smile.amazon.co.uk/"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["My Mail"]
+host = "https://www.mymail.co.uk/home"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Runnymede Spa booking"]
+host = "https://spabooking.runnymedehotel.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Home Internet Router"]
+host = "http://bt-hub.chrissy.org"
+mask = "/32"
+check = "80"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["BBC"]
+host = "https://bbc.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["LBC"]
+host = "https://www.lbc.co.uk"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["gmail"]
+host = "https://mail.google.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Hargreaves Watch List"]
+host = "https://www.hl.co.uk/watchlists"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["Whatsapp Web"]
+host = "https://web.whatsapp.com"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""
+
+["You Tube"]
+host = "https://www.youtube.com/"
+mask = "/32"
+check = "443"
+type = "url"
+lookup = "192.168.1.77"
+last_down = ""
+last_up = ""

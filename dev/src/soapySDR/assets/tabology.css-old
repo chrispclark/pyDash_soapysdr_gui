@@ -1,0 +1,21 @@
+.tabs_styles {
+	height: 00px;
+	align-items: centre;
+}
+
+.tab_style {
+	border-Bottom: 1px solid #F2F2F2;
+	font-Weight: normal;
+	border-radius: 15px;
+	background-color: #F2F2F2;
+	box-shadow: 4px 4px 4px 4px lightgrey;
+	padding: 0;
+}
+
+.tab_selected_style {
+	border-Top: 1px solid #F2F2F2;
+	border-Bottom: 1px solid #F2F2F2;
+	background-Color: #F2F2F2;
+	color: yellow;
+	border-radius: 15px;
+	padding: 0;

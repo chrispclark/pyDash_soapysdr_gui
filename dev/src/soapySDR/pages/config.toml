@@ -1,0 +1,9 @@
+['database dev']
+SQLALCHEMY_DATABASE_URI = 'mariadb://networkmonitor:networkmonitor@localhost/hoststatus_dev'
+
+['database live']
+SQLALCHEMY_DATABASE_URI = 'mariadb://networkmonitor:networkmonitor@localhost/hoststatus_live'
+
+['status-update-queue']
+host-status-update-queue = 'hoststatusQueue'
+arp-status-update-queue = 'arpstatusQueue'

@@ -1,0 +1,449 @@
+import sys
+import dash_bootstrap_components as dbc
+import dash_daq as daq
+
+# import pandas as pd
+
+# import dash
+from dash import dash_table, dcc, html, callback
+
+# from database_actions import DatabaseActions as db
+# from models import arp_status_table, availability_table, host_status_table
+from logit import logger
+
+logger.info('layout_dbc')
+
+# dash.register_page(__name__)
+
+colors = {'background': 'rgb(50, 50, 50)', 'text': '#FFFFFF'}
+pyver = (
+    f'python {sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]}'
+)
+
+
+layitout_py_version = (
+    html.Div(
+        [
+            html.H6(
+                pyver,
+                id='py-ver',
+                style={
+                    'display': 'inline-block',
+                    'margin-left': '5px',
+                    'color': 'white',
+                    'font-size': '85%',
+                },
+                # className=" py-3 text-5xl font-bold text-gray-800",
+            ),
+        ],
+    ),
+)
+
+layitout_arp_table_resolve_ip = (
+    html.Div(
+        id='resolve_arp_ipaddress',
+        style={
+            'display': 'inline-block',
+            'margin-left': '5px',
+            'color': 'white',
+            'font-size': '85%',
+        },
+        # className=" py-3 text-5xl font-bold text-gray-800",
+    ),
+)
+
+
+layitout_host_leds = (
+    html.Div(
+        [
+            daq.Indicator(
+                id='host-indicator',
+                # color="#808080",
+                label='Host Update Check Resting',
+                style={
+                    'display': 'inline-block',
+                    'margin-left': '5px',
+                    'color': 'white',
+                },
+            ),
+        ],
+    ),
+)
+layitout_arp_leds = (
+    html.Div(
+        [
+            daq.Indicator(
+                id='arp-indicator',
+                # color="#808080",
+                label='Arp Update Check Resting',
+                style={
+                    'display': 'inline-block',
+                    'margin-left': '5px',
+                    'color': 'white',
+                },
+            ),
+            # html.Button("On/Off", id="arp-indicator-button", n_clicks=0),
+        ],
+    ),
+)
+
+layitout_quit = [
+    dbc.Button('Quit', id='quit_button', className='me-2', n_clicks=0),
+    html.Span(id='example-output', style={'verticalAlign': 'middle'}),
+]
+
+
+layitout_test = (
+    html.Div(
+        [
+            html.H6(
+                'time',
+                id='timedifference',
+                style={'display': 'inline-block', 'margin-left': '5px'},
+            ),
+        ],
+    ),
+)
+
+layitout_host_status = (
+    html.Div(
+        [
+            html.H6(
+                'Checking Host Status...',
+                id='hoststatus_label',
+                style={
+                    'display': 'inline-block',
+                    'margin-left': '5px',
+                    'font-size': '85%',
+                },
+            ),
+        ],
+    ),
+)
+
+layitout_arp_status = (
+    html.Div(
+        [
+            html.H6(
+                'Checking Arp Status...',
+                id='arpstatus_label',
+                style={
+                    'display': 'inline-block',
+                    'margin-left': '5px',
+                    'font-size': '85%',
+                },
+            ),
+        ],
+    ),
+)
+
+layitout_debug_logs = (
+    html.Div(
+        [
+            html.H6(
+                'Debug Logs...',
+                id='debug_label',
+                style={'display': 'inline-block'},
+            ),
+            dcc.Textarea(
+                id='textarea-example1',
+                value='Textarea content initialized',
+                style=dict(
+                    width='100%',
+                    height=250,
+                    backgroundColor=colors['background'],
+                    color=colors['text'],
+                    font_size='.6em',
+                    font_family='sans-serif',
+                ),
+            ),
+        ],
+    ),
+)
+
+layitout_logs = (
+    html.Div(
+        [
+            html.H6(
+                'Event Log...',
+                id='status_label',
+                style={'display': 'inline-block'},
+            ),
+            dcc.Textarea(
+                id='textarea-example',
+                value='Textarea content initialized',
+                style=dict(
+                    width='100%',
+                    height=250,
+                    backgroundColor=colors['background'],
+                    color=colors['text'],
+                    font_size='.4em',
+                    font_family='sans-serif',
+                ),
+            ),
+        ],
+    ),
+)
+"""
+layitout_sync = (
+    html.Div(
+        [
+            html.Button(
+                "Sync Config",
+                id="my-button",
+                style={"display": "inline-block", "margin-left": "10px"},
+            ),
+            html.H6(
+                id="button-clicks",
+                style={
+                    "display": "inline-block",
+                    "font-size": "1em",
+                    "margin-left": "10px",
+                },
+            ),
+        ],
+    ),
+)
+"""
+layitout_arp = (
+    html.Div(
+        [
+            html.H6(
+                'arp status check',
+                id='arp_status_check',
+                style={'textAlign': 'left'},
+            ),
+            dash_table.DataTable(
+                id='arp-table',
+                columns=[
+                    {
+                        'name': 'descriptive_name',
+                        'id': 'descriptive_name',
+                        'editable': False,
+                    },
+                    {'name': 'host', 'id': 'host', 'editable': False},
+                    {'name': 'mask', 'id': 'mask', 'editable': False},
+                    {'name': 'check', 'id': 'check', 'editable': False},
+                    {'name': 'type', 'id': 'type', 'editable': False},
+                    {'name': 'Status', 'id': 'Status', 'editable': False},
+                    {'name': 'reason', 'id': 'reason', 'editable': False},
+                    {
+                        'name': 'Last Moved To Up',
+                        'id': 'last_up',
+                        'editable': False,
+                    },
+                    {
+                        'name': 'last Moved To down',
+                        'id': 'last_down',
+                        'editable': False,
+                    },
+                    {
+                        'name': 'timedifference',
+                        'id': 'timedifference',
+                        'editable': False,
+                    },
+                ],
+                sort_action='native',
+                sort_mode='multi',
+                # Set cell color dependant or marked UP or DOWN
+                style_data_conditional=[
+                    {
+                        'if': {
+                            'filter_query': '{timedifferencesec} < 1200',
+                        },
+                        'backgroundColor': 'blue',
+                    },
+                    {
+                        'if': {
+                            'filter_query': '{Status} ="UP"',
+                        },
+                        'color': 'LawnGreen',
+                    },
+                    {
+                        'if': {
+                            'filter_query': '{Status} !="UP"',
+                        },
+                        'color': 'tomato',
+                    },
+                ],
+                style_header={'backgroundColor': 'rgb(30, 30, 30)'},
+                style_cell={
+                    'backgroundColor': 'rgb(50, 50, 50)',
+                    'color': 'white',
+                    'text_align': 'left',
+                    'font_size': '.7em',
+                    'font_family': 'sans-serif',
+                },
+                fill_width=False,
+                editable=False,
+                row_selectable='single',
+                selected_rows=[0],
+                # data=pd.read_json(dash_table.DataTable.data, orient="records"),
+            ),
+        ],
+    ),
+)
+
+#  ----------------------- Host Table Layout --------------------- #
+layitout_hosts = (
+    html.Div(
+        [
+            html.H6(
+                'Host status check',
+                style={'textAlign': 'left'},
+                id='host-table-layout',
+                className='col-9',
+            ),
+            dash_table.DataTable(
+                id='host-table',
+                columns=[
+                    {
+                        'name': 'descriptive_name',
+                        'id': 'descriptive_name',
+                        'editable': False,
+                    },
+                    {'name': 'host', 'id': 'host', 'editable': False},
+                    {'name': 'mask', 'id': 'mask', 'editable': False},
+                    {'name': 'check', 'id': 'check', 'editable': False},
+                    {'name': 'type', 'id': 'type', 'editable': False},
+                    {'name': 'Status', 'id': 'Status', 'editable': False},
+                    {'name': 'reason', 'id': 'reason', 'editable': False},
+                    {
+                        'name': 'Last Moved To Up',
+                        'id': 'last_up',
+                        'editable': False,
+                    },
+                    {
+                        'name': 'last Moved To down',
+                        'id': 'last_down',
+                        'editable': False,
+                    },
+                    {
+                        'name': 'timedifference',
+                        'id': 'timedifference',
+                        'editable': False,
+                    },
+                ],
+                #  Read data from the dictionary that has been created
+                #  from the
+                # current sql table.
+                # data=db.readtable(HOST_TABLE_NAME.__name__),
+                sort_action='native',
+                sort_mode='multi',
+                # Set cell color dependant or marked UP or DOWN
+                style_data_conditional=[
+                    {
+                        'if': {
+                            'filter_query': '{timedifferencesec} < 1200',
+                        },
+                        'backgroundColor': 'Blue',
+                    },
+                    {
+                        'if': {
+                            'filter_query': '{Status} ="UP"',
+                        },
+                        'color': 'LawnGreen',
+                    },
+                    {
+                        'if': {
+                            'filter_query': '{Status} !="UP"',
+                        },
+                        'color': 'tomato',
+                    },
+                ],
+                style_header={'backgroundColor': 'rgb(30, 30, 30)'},
+                style_cell=dict(
+                    backgroundColor='rgb(50, 50, 50)',
+                    color='white',
+                    text_align='left',
+                    font_size='.7em',
+                    font_family='sans-serif',
+                ),
+                fill_width=False,
+                editable=True,
+            ),
+            #  ----------------------- Interval Timers --------------------- #
+            """
+            dcc.Interval(
+                id="resolve_arp_ipaddress-interval",
+                n_intervals=0,
+                # max_intervals=0,  # <-- only run once
+                interval=20 * 1000,
+            ),
+            dcc.Interval(
+                id="timedifference-interval",
+                interval=5 * 1000,  # in milliseconds
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="host-table-interval",
+                interval=20 * 1000,  # in milliseconds
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="log-interval",
+                interval=10 * 1000,  # in milliseconds
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="log-interval1",
+                interval=10 * 1000,  # in milliseconds
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="host-status-update-interval",
+                interval=5 * 1000,
+                n_intervals=0,
+            ),
+            dcc.Interval(                dbc.Col(
+                    layitout_test,
+                    width={"size": 1, "offset": 0, "order": "1"},
+                ),
+                dbc.Col(
+                    layitout_host_status,
+                    width={"size": 3, "offset": 0, "order": "1"},
+                ),
+                dbc.Col(
+                    layitout_arp_status,
+                    width={"size": 3, "offset": 0, "order": "1"},
+                ),
+                # dbc.Col(layitout_sync, style={"width": "30%"}),
+                dbc.Col(
+                    layitout_host_leds,
+                    width={"size": 2, "offset": 0, "order": "1"},
+                ),
+                dbc.Col(
+                    layitout_arp_leds,
+                    width={"size": 2, "offset": 0, "order": "1"},
+                ),
+                id="arp-table-interval",
+                interval=10 * 1000,  # in milliseconds
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="arp-status-update-interval",
+                interval=10 * 1000,
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="host-led-update-interval",
+                interval=5 * 1000,
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="arp-led-update-interval",
+                interval=5 * 1000,
+                n_intervals=0,
+            ),
+            dcc.Interval(
+                id="availability-table-interval",
+                interval=10 * 1000,
+                n_intervals=0,
+            ),
+            """,
+        ],
+    ),
+)
+
+# z = get_callbacks(app)
+# logger.info(z)
