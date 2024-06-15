@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbade223-fb29-427d-a21a-0077b972655a" name="Changes" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bbade223-fb29-427d-a21a-0077b972655a" name="Changes" comment="First commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +32,12 @@
     &quot;assignee&quot;: &quot;chrispclark&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:/chrispclark/pyDash_soapysdr_gui.git&quot;,
-    &quot;accountId&quot;: &quot;081c4efe-3744-47a6-bc66-88a3ddd6d659&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:/chrispclark/src.git",
+    "accountId": "081c4efe-3744-47a6-bc66-88a3ddd6d659"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -291,13 +287,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.SDRConfigs (2)" />
       <item itemvalue="Python.SDRConfigs" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.simplysoap (2)" />
       <item itemvalue="Python.simplysoap" />
       <item itemvalue="Python.soap_mp1" />
       <item itemvalue="Python.soap_mp" />
+      <item itemvalue="Python.SDRConfigs (2)" />
+      <item itemvalue="Python.simplysoap (2)" />
       <item itemvalue="Python.startSDR" />
     </list>
     <recent_temporary>
@@ -321,6 +317,15 @@
       <updated>1695137565959</updated>
       <workItem from="1695642527845" duration="31000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1718461908328</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718461908328</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,5 +338,16 @@
     </ignored-roots>
     <MESSAGE value="First commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SDRConfigs.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
