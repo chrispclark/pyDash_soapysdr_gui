@@ -77,9 +77,10 @@ class RadioConfigs:
     F_offset: int = 250000
     use_agc: bool = True  # Use or don't use the AGC
     timeout_us: int = int(5e6)
+
+    @staticmethod
     def __post_init__(self) -> None:
         logger.info("radio data")
-
 
 
 @dataclass

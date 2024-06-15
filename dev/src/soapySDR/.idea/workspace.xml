@@ -56,32 +56,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Python.Current File.executor": "Run",
-    "Python.SDRConfigs (2).executor": "Run",
-    "Python.SDRConfigs.executor": "Run",
-    "Python.Unnamed.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.simplysoap (2).executor": "Run",
-    "Python.simplysoap.executor": "Run",
-    "Python.soap_mp.executor": "Run",
-    "Python.soap_mp1.executor": "Debug",
-    "Python.startSDR.executor": "Run",
-    "Python.usage.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/data/code/python/dash-gui-radio",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Current File.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SDRConfigs (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.SDRConfigs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.simplysoap (2).executor&quot;: &quot;Run&quot;,
+    &quot;Python.simplysoap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.soap_mp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.soap_mp1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.startSDR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.usage.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/data/code/python/dash-gui-radio&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="soapySDR" is-module-sdk="true">
@@ -291,13 +291,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.SDRConfigs (2)" />
       <item itemvalue="Python.SDRConfigs" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.simplysoap (2)" />
       <item itemvalue="Python.simplysoap" />
       <item itemvalue="Python.soap_mp1" />
       <item itemvalue="Python.soap_mp" />
-      <item itemvalue="Python.SDRConfigs (2)" />
-      <item itemvalue="Python.simplysoap (2)" />
       <item itemvalue="Python.startSDR" />
     </list>
     <recent_temporary>
