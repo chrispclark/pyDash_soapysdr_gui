@@ -79,7 +79,7 @@ class RadioConfigs:
     timeout_us: int = int(5e6)
 
     @staticmethod
-    def __post_init__(self) -> None:
+    def __post_init__() -> None:
         logger.info("radio data")
 
 

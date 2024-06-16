@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbade223-fb29-427d-a21a-0077b972655a" name="Changes" comment="First commit" />
+    <list default="true" id="bbade223-fb29-427d-a21a-0077b972655a" name="Changes" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDRConfigs.py" beforeDir="false" afterPath="$PROJECT_DIR$/SDRConfigs.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,12 +35,12 @@
     &quot;assignee&quot;: &quot;chrispclark&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:/chrispclark/src.git",
-    "accountId": "081c4efe-3744-47a6-bc66-88a3ddd6d659"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:/chrispclark/src.git&quot;,
+    &quot;accountId&quot;: &quot;081c4efe-3744-47a6-bc66-88a3ddd6d659&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -74,7 +77,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/data/code/python/dash-gui-radio&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -287,13 +290,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.SDRConfigs (2)" />
       <item itemvalue="Python.SDRConfigs" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.simplysoap (2)" />
       <item itemvalue="Python.simplysoap" />
       <item itemvalue="Python.soap_mp1" />
       <item itemvalue="Python.soap_mp" />
-      <item itemvalue="Python.SDRConfigs (2)" />
-      <item itemvalue="Python.simplysoap (2)" />
       <item itemvalue="Python.startSDR" />
     </list>
     <recent_temporary>
@@ -325,11 +328,30 @@
       <option name="project" value="LOCAL" />
       <updated>1718461908328</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1718461923524</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718461923524</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -338,16 +360,5 @@
     </ignored-roots>
     <MESSAGE value="First commit" />
     <option name="LAST_COMMIT_MESSAGE" value="First commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SDRConfigs.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
